@@ -8,3 +8,9 @@
 
 ###It acts as Service Discovery Client
 Service Discovery Client dependency added
+
+###Swagger 3
+- For API Documentation
+URL - http://localhost:9001/v2/api-docs
+  http://localhost:9001/swagger-ui/
+  

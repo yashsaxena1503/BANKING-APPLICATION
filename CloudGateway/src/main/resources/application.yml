@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: ACCOUNT-PROFILE-DATA-SERVICE
+          uri: lb://ACCOUNT-PROFILE-DATA-SERVICE
+          predicates:
+            - Path=/banking/**
+        - id: ACCOUNT-REFERENCE-DATA-SERVICE
+          uri: lb://ACCOUNT-REFERENCE-DATA-SERVICE
+          predicates:
+            - Path=/users/**
+
+
+
+
+server:
+  port: 9191
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultzone: http://localhost:8761/eureka/
+    instance:
+      hostname: localhost
